@@ -32,17 +32,12 @@ function App() {
   };
 
   const deleteTask = (id) => {
-    //delete tasks with unique id
     const newTasks = tasks.filter((task) => task.id !== id);
     setTasks(newTasks);
-    //delete tasks from local storage
     localStorage.setItem("tasks", JSON.stringify(newTasks));
   };
 
   const searchResult = (e) => {
-    alert("searching");
-    //filter the tasks with search value
-
     setTasks(
       tasks.filter((task) => {
         return task.task.toLowerCase().includes(search.toLowerCase());
